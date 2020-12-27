@@ -1,0 +1,10 @@
+<hr>
+<center>
+{{ range .Params.tags }}
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <span class="btn btn-outline-secondary">
+    #<a class="text-black-50" href="{{ $href }}">{{ . }}</a>
+    </span> 
+{{ end }}
+</center>
+<hr>

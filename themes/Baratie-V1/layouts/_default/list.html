@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2 class="webtitle">
+                {{ .Title }}
+                <hr>
+            </h2>
+            {{ partial "ads/homePageADS.html" . }} <hr>
+            <div class="row row-cols-1 row-cols-md-2">
+                {{ range .Paginator.Pages }}
+                    <div class="col mb-3">
+                        <div class="card h-100 ">
+                            <a href="{{ .Permalink }}">
+                                <img src="{{ or .Params.Featured_image .Params.Image }}"
+                                class="card-img-top"
+                                alt="{{ .Title }}">
+                                <div class="card-img-overlay">
+                                    <button class="btn" style="background-color: rgb(252, 235, 81);"
+                                    type="submit">{{ .Params.Recipecategory }}</button>
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h4 class="list-article">
+                                    <a href="{{ .Permalink }}" class="text-dark">
+                                        {{ .Title }}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                <hr>
+            {{ template "_internal/pagination.html" . }}
+            <hr>
+            {{ partial "ads/homePageADS.html" . }} <hr>
+        </div>
+        <div class="col-lg-4">
+            {{ partial "widget/sidebar.html" . }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

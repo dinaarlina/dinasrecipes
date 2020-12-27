@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {{ partial "widget/breadcrumb.html" . }} <hr>
+            <h2 class="list-article">
+                {{ .Title }}
+            </h2> <hr>
+            {{ partial "ads/singleADS1.html" . }} <hr>
+            {{ partial "widget/sosial-share.html" . }}
+            <hr>
+            <div class="content">
+                {{ replace (replace .Content "<!--inarticleads1-->" (partial "ads/singleADS1.html" .)) "<!--inarticleads2-->" (partial "ads/singleADS2.html" .) | safeHTML }}
+            </div>
+            {{ partial "widget/tags.html" . }} <br>
+            {{ partial "ads/singleADS2.html" . }} <hr>
+            {{ partial "widget/next-prev.html" . }}
+            <hr> <br>
+        </div>
+        <div class="col-md-4">
+            {{ partial "widget/related.html" . }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

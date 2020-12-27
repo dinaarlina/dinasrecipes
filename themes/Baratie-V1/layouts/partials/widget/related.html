@@ -1,0 +1,28 @@
+
+{{ $related := .Site.RegularPages.Related .| first 10 }}
+{{ with $related }}
+<h2 class="webtitle">Related Post</h2>
+<hr>
+{{ partial "ads/sidebarADS.html" . }} <hr>
+{{ range .}}
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ or .Params.Image .Params.Featured_image }}"
+                    class="card-img" alt="{{ .Title }}">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h6 class="list-article">
+                        <a href="{{ .Permalink }}" class="text-dark">
+                            {{ .Title }}
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}
+{{ end }}

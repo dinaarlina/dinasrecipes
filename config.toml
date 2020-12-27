@@ -1,0 +1,98 @@
+baseURL = "https://geteasyrecipesideas.web.app/"
+languageCode = "en-us"
+title = "Get Recipes site"
+theme = "Baratie-v1"
+paginate = "8"
+
+[permalinks]
+  blog = ":slug"
+  popular = ":slug"
+
+[params]
+    description = "Get Easy Recipes Site"
+    key = "Recipes, Popular Recipes, delicious Recipes, testy recipes"
+
+[menu]
+# MENU NAVBAR
+  [[menu.navbar]]
+  name = "About "
+  url = "/about"
+  weight = 1
+
+  [[menu.navbar]]
+  name = "DMCA "
+  url = "/dmca"
+  weight = 2
+
+  [[menu.navbar]]
+  name = "Privacy Policy "
+  url = "/privacy"
+  weight = 3
+
+  [[menu.navbar]]
+  name = "Term Use "
+  url = "/term"
+  weight = 4
+
+  [[menu.navbar]] 
+  name = "CCPA "
+  url = "/ccpa"
+  weight = 5
+
+
+# MENU FOOTER
+  [[menu.footer]]
+  name = "About "
+  url = "/about"
+  weight = 1
+
+  [[menu.footer]]
+  name = "DMCA "
+  url = "/dmca"
+  weight = 2
+
+  [[menu.footer]]
+  name = "Privacy Policy "
+  url = "/privacy"
+  weight = 3
+
+  [[menu.footer]]
+  name = "Term Use "
+  url = "/term"
+  weight = 4
+
+  [[menu.footer]] 
+  name = "CCPA "
+  url = "/ccpa"
+  weight = 5
+
+  [markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 6
+    startLevel = 2

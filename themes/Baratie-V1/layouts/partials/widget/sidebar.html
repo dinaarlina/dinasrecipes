@@ -1,0 +1,24 @@
+<h2 class="webtitle">Most Popular</h2>
+<hr>
+{{ partial "ads/sidebarADS.html" . }} <hr>
+{{ range first 10 (where .Site.RegularPages "Section" "popular")}}
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ or .Params.Image .Params.Featured_image }}"
+                    class="card-img" alt="{{ .Title }}">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h6 class="list-article">
+                        <a href="{{ .Permalink }}" class="text-dark">
+                            {{ .Title }}
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-lg-5 ml-auto text-left">
+        {{ with .PrevInSection }}
+        <div class="col mb-3">
+            <div class="card h-100 ">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ or .Params.Featured_image .Params.Image }}"
+                    class="card-img-top"
+                    alt="{{ .Title }}">
+                </a>
+                <div class="card-body">
+                    <h6 class="webtitle">
+                        <a href="{{ .Permalink }}" class="text-danger">
+                            {{ .Title }}
+                        </a>
+                    </h6>
+                    <a href="{{ .Permalink }}">
+                        <button type="button" class="btn btn-warning">PREV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    <div class="col-lg-5 ml-auto text-right">
+        {{ with .NextInSection }}
+        <div class="col mb-3">
+            <div class="card h-100 ">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ or .Params.Featured_image .Params.Image }}"
+                    class="card-img-top"
+                    alt="{{ .Title }}">
+                </a>
+                <div class="card-body">
+                    <h6 class="webtitle">
+                        <a href="{{ .Permalink }}" class="text-danger">
+                            {{ .Title }}
+                        </a>
+                    </h6>
+                    <a href="{{ .Permalink }}">
+                        <button type="button" class="btn btn-warning">NEXT</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>

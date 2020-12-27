@@ -1,0 +1,23 @@
+<div class="container">
+    <hr>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transperent fixed-auto">
+            <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+                {{ $logoimg := "img/logo.svg"}}
+                <img src="{{ $logoimg | absURL }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav ml-auto">
+                    {{ range .Site.Menus.navbar }}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+        <hr>
+</div>

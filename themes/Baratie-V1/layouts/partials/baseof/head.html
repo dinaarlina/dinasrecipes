@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#EC008C">
+<meta content="index, follow" name="googlebot">
+<meta content="follow, all" name='Googlebot-Image'>
+<meta content='follow, all' name='msnbot'>
+<meta content='follow, all' name='Slurp'>
+<meta content='follow, all' name='ZyBorg'>
+<meta content='follow, all' name='Scooter'>
+<meta content='all' name='spiders'>
+<meta content='all' name='WEBCRAWLERS'>
+<meta content='noodp' name='robots'>
+<meta content='noydir' name='robots'>
+<link href="{{ .Permalink }}" rel='canonical'>
+{{ hugo.Generator}}
+<title>
+    {{ if .IsPage }}
+    {{ .Title }} | {{ .Site.Title }}
+    {{ else }}
+    {{ .Site.Title }} | {{ .Site.Params.description }}
+    {{ end }}
+</title>
+<meta name="keywords" content="
+{{ if .IsPage }}
+{{ .Params.Katakunci }}
+{{ else }}
+{{ .Site.Params.key }}
+{{ end }}
+">
+<meta name="description" content="
+{{ if .IsPage }}
+{{ or ( .Params.Description ) ( .Summary ) }}
+{{ else }}
+{{ .Site.Params.description }}
+{{ end }}
+">
+{{ partial "ads/autoADS.html" . }}
+{{ partial "baseof/web.html" . }}
+
+<!-- link Css, Favicon, Google Font -->
+{{ $appleTouchIcon := "img/logo.svg" }}<link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouchIcon | absURL }}">
+{{ $favicon32x32 := "img/logo.svg" }}<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32x32 | absURL }}">
+{{ $favicon16x16 := "img/logo.svg" }}<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16x16 | absURL }}">
+{{ $siteWebmanifest := "site.webmanifest" }}<link rel="manifest" href="{{ $siteWebmanifest | absURL }}">
+{{ $btCss := "css/bootstrap.css" }} <link rel="stylesheet" href="{{ $btCss | absURL }}">
+{{ $styleCss := "css/style.css" }} <link rel="stylesheet" href="{{ $styleCss | absURL }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&display=swap" rel="stylesheet">
